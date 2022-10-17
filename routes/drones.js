@@ -10,12 +10,13 @@ router.get('/drones', (req, res, next) => {
     res.render("drones/list.hbs", {
       droneList : response
     });
-    
+  })
+  .catch((error) =>{
+    next(error)
     
   })
 
-.catch((error) =>{
-  next(error)
+
 })
 
 
@@ -29,13 +30,13 @@ router.get('/drones/create', (req, res, next) => {
 
 
 
-router.post('/create', (req, res, next) => {
+router.post('drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
 let droneAdd = {
   name: req.body.name,
   propellers: req.body.propellers,
-  maxSpedd: req.body.maxSpedd
+  maxSpeed: req.body.maxSpeed
 }
 
 Drone.create(droneAdd)
