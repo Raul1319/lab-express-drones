@@ -4,9 +4,11 @@
 
 {{#each droneList}}
 
-{{name}}
-{{propellers}}
-{{maxSpeed}}
+<p>Name: <a href="/drones{{_droneId}}/edit">{{name}}</a></p>
+<br>
+<P>Propellers: {{propellers}}></P>
+<br>
+<p>Max Speed: {{maxSpeed}}</p>
 {{/each}}
 
 </div>
